@@ -7,7 +7,7 @@ public class OdfApplication {
         markersMock.put("$prova", "TESTO_SOSTITUITO");
         markersMock.put("$indirizzo", "Via prova 123");
 
-        OdfReader odfReader = new OdfReader("documento1.odt");
+        OdfReader odfReader = new OdfReader("documento_vuoto.odt");
 
         odfReader.printDocumentNodes();
 
@@ -20,9 +20,6 @@ public class OdfApplication {
         odfReader.insertNewRow("inserita da java---2---inserita da java---2---");
         odfReader.printDocumentNodes();
 
-
-
-
-        odfReader.saveDocumentAndClose("documento1_result.odt");
+        odfReader.saveDocumentAndClose("result.odt");
     }
 }

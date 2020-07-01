@@ -36,6 +36,11 @@ public class OdfReader {
         return this.odfDocument;
     }
 
+    public void insertNewRow(String text) throws Exception {
+        Node newNode = getLastNode().cloneNode(true);
+        newNode.setTextContent(text);
+        getOdfDocument().getContentRoot().insertBefore(newNode, null);
+    }
 
     private void printNodes(NodeList nodeList, int level) {
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -74,4 +79,9 @@ public class OdfReader {
         node.setTextContent(nodeString);
     }
 
+
+    private Node getLastNode() throws Exception {
+        int size = this.odfDocument.getContentRoot().getChildNodes().getLength();
+        return this.odfDocument.getContentRoot().getChildNodes().item(size - 1);
+    }
 }

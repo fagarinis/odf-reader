@@ -15,7 +15,10 @@ public class OdfApplication {
         odfReader.applyMarkers(markersMock);
 
 
-//        odfReader.printDocumentNodes();
+        odfReader.insertNewRow("inserita da java------");
+        odfReader.insertNewRow("inserita da java---1---");
+        odfReader.insertNewRow("inserita da java---2---inserita da java---2---");
+        odfReader.printDocumentNodes();
 
 
 
